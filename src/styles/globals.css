@@ -1,0 +1,46 @@
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('../assets/fonts/Sahar-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('../assets/fonts/Sahar-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('../assets/fonts/Sahar-Heavy_0.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sahar';
+    src: url('../assets/fonts/Sahar-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Aquí puedes agregar tus @font-face declarations */
+/* Ejemplo:
+@font-face {
+    font-family: 'NombreFuente';
+    src: url('../assets/fonts/nombre-fuente.woff2') format('woff2'),
+         url('../assets/fonts/nombre-fuente.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+*/
