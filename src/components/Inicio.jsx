@@ -11,7 +11,7 @@ const Inicio = () => {
                     playsInline
                     className="absolute top-0 left-0 w-full h-full object-cover"
                 >
-                    <source src="/videos/DJI_0184.MP4" type="video/mp4" />
+                    <source src="/videos/DJI_0184.webm" type="video/webm" />
                     Tu navegador no soporta el elemento de video.
                 </video>
                 <div className="absolute inset-0 flex items-center justify-center">
