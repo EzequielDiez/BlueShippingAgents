@@ -62,23 +62,20 @@ const Navbar = () => {
                     className="relative inline-flex items-center h-7 w-20 rounded-full bg-transparent border border-white transition-all duration-300 hover:bg-white/20 hover:shadow-lg"
                 >
                     <span
-                        className={`absolute left-3 top-1/2 -translate-y-1/2 font-['Sahar'] font-bold z-20 transition-colors duration-300 ${
-                            isEnglish ? 'text-white' : 'text-[#1D4F87]'
-                        }`}
+                        className={`absolute left-3 top-1/2 -translate-y-1/2 font-['Sahar'] font-bold z-20 transition-colors duration-300 ${isEnglish ? 'text-white' : 'text-[#1D4F87]'
+                            }`}
                     >
                         ES
                     </span>
                     <span
-                        className={`absolute right-3 top-1/2 -translate-y-1/2 font-['Sahar'] font-bold z-20 transition-colors duration-300 ${
-                            isEnglish ? 'text-[#1D4F87]' : 'text-white'
-                        }`}
+                        className={`absolute right-3 top-1/2 -translate-y-1/2 font-['Sahar'] font-bold z-20 transition-colors duration-300 ${isEnglish ? 'text-[#1D4F87]' : 'text-white'
+                            }`}
                     >
                         EN
                     </span>
                     <span
-                        className={`absolute h-7 w-10 rounded-full bg-white transition-transform duration-300 ease-in-out shadow-md z-10 ${
-                            isEnglish ? 'translate-x-10' : 'translate-x-0'
-                        }`}
+                        className={`absolute h-7 w-10 rounded-full bg-white transition-transform duration-300 ease-in-out shadow-md z-10 ${isEnglish ? 'translate-x-10' : 'translate-x-0'
+                            }`}
                     />
                 </button>
             </div>
