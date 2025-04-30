@@ -59,7 +59,7 @@ const Navbar = () => {
             <div className="absolute right-8 top-1/2 -translate-y-1/2 z-10">
                 <button
                     onClick={toggleLanguage}
-                    className="relative inline-flex items-center h-7 w-20 rounded-full bg-transparent border border-white transition-all duration-300 hover:bg-white/20 hover:shadow-lg"
+                    className="relative inline-flex items-center h-7 w-20 rounded-full bg-transparent border border-white transition-all duration-300 hover:bg-white/20 hover:shadow-lg cursor-pointer"
                 >
                     <span
                         className={`absolute left-3 top-1/2 -translate-y-1/2 font-['Sahar'] font-bold z-20 transition-colors duration-300 ${isEnglish ? 'text-white' : 'text-[#1D4F87]'
