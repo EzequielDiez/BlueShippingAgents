@@ -7,7 +7,7 @@ const Contacto = () => {
             <div className="flex flex-col h-full">
                 {/* Arriba: Título y texto */}
                 <div className="bg-[#1D4F87] text-white flex items-end justify-end h-[55%]">
-                    <div className="flex flex-col items-start max-w-2xl w-full px-8 pb-8 text-left">
+                    <div className="flex flex-col items-start max-w-2xl w-full px-16 pb-8 text-left">
                         <h2 className="text-3xl md:text-4xl font-bold mb-3">CONTACTO</h2>
                         <p className="mb-3 text-base md:text-lg">
                             Gracias al apoyo recibido de parte de clientes, nuestra firma se está posicionando entre aquellas más confiables y eficientes del mercado.
@@ -19,7 +19,7 @@ const Contacto = () => {
                 </div>
                 {/* Abajo: Iconos y datos */}
                 <div className="bg-white text-[#1D4F87] flex justify-end items-start h-[45%]">
-                    <div className="flex flex-col items-start max-w-2xl w-full px-8 pt-8 space-y-3">
+                    <div className="flex flex-col items-start max-w-2xl w-full px-16 pt-8 space-y-3">
                         <div className="flex items-start gap-3">
                             <img src="/images/icono-telefono.svg" alt="Teléfono" className="w-6 h-6 mt-1" />
                             <div>
@@ -29,13 +29,13 @@ const Contacto = () => {
                         <div className="flex items-start gap-3">
                             <img src="/images/icono-mail.svg" alt="Mail" className="w-6 h-6 mt-1" />
                             <div>
-                                <p className="leading-tight pt-1.5">operations@bsa-agents.com</p>
+                                <p className="leading-tight pt-1.5 md:text-lg">operations@bsa-agents.com</p>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
                             <img src="/images/icono-ubicacion.svg" alt="Ubicación" className="w-6 h-6 mt-1" />
                             <div>
-                                <p className="leading-tight pt-1.5">Olavarría 170 - C1162ABD - Ciudad Autónoma de Buenos Aires, Argentina.</p>
+                                <p className="leading-tight md:text-lg">Olavarría 170 - C1162ABD - Ciudad Autónoma de Buenos Aires, Argentina.</p>
                             </div>
                         </div>
                     </div>
@@ -48,15 +48,15 @@ const Contacto = () => {
                 {/* Fondo blanco abajo */}
                 <div className="bg-white h-[45%]" />
                 {/* Formulario flotante */}
-                <div className="absolute inset-0 flex items-center pt-16 justify-center">
-                    <div className="bg-white shadow-xl rounded-2xl p-6 w-full max-w-md flex flex-col items-center mx-8">
-                        <h3 className="text-[#1D4F87] text-2xl font-bold mb-4 text-center">Envíanos un mensaje</h3>
+                <div className="absolute inset-0 flex items-center justify-start">
+                    <div className="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.6)] rounded-2xl p-6 w-full max-w-md flex flex-col items-center ml-8">
+                        <h3 className="text-[#1D4F87] text-2xl font-bold mb-4 w-full text-left">Envíanos un mensaje</h3>
                         <form className="space-y-3 w-full">
-                            <input type="text" placeholder="Nombre" className="w-full border border-[#1D4F87] rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar" />
-                            <input type="email" placeholder="Email" className="w-full border border-[#1D4F87] rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar" />
-                            <input type="text" placeholder="Teléfono" className="w-full border border-[#1D4F87] rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar" />
-                            <textarea placeholder="Mensaje" rows={3} className="w-full border border-[#1D4F87] rounded-2xl px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar resize-none" />
-                            <button type="submit" className="w-full bg-[#1D4F87] text-white font-bold rounded-full py-2.5 text-lg transition hover:bg-[#17406c]">Enviar</button>
+                            <input type="text" placeholder="Nombre" className="w-full border border-[#1D4F87] rounded-full px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar text-lg placeholder-[#1D4F87]" />
+                            <input type="email" placeholder="Email" className="w-full border border-[#1D4F87] rounded-full px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar text-lg placeholder-[#1D4F87]" />
+                            <input type="text" placeholder="Teléfono" className="w-full border border-[#1D4F87] rounded-full px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar text-lg placeholder-[#1D4F87]" />
+                            <textarea placeholder="Mensaje" rows={3} className="w-full border border-[#1D4F87] rounded-2xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar resize-none text-lg placeholder-[#1D4F87]" />
+                            <button type="submit" className="w-full bg-[#1D4F87] text-white font-bold rounded-full py-2.5 text-lg transition hover:bg-[#17406c] cursor-pointer">Enviar</button>
                         </form>
                     </div>
                 </div>

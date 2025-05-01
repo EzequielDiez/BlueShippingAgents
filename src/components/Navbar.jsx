@@ -1,9 +1,31 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
     const location = useLocation();
     const [isEnglish, setIsEnglish] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
+
+    useEffect(() => {
+        const controlNavbar = () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) { // scrolling down
+                setIsVisible(false);
+            } else { // scrolling up
+                setIsVisible(true);
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        window.addEventListener('scroll', controlNavbar, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', controlNavbar);
+        };
+    }, [lastScrollY]);
 
     const isActive = (path) => {
         return location.pathname === path;
@@ -14,7 +36,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-[#1D4F87] px-4 text-white h-24 relative">
+        <nav className={`fixed top-0 left-0 right-0 bg-[#1D4F87] px-4 text-white h-24 z-50 transition-all duration-500 ease-in-out ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}>
             <div className="max-w-7xl mx-auto flex justify-between items-center h-full">
                 <div className="flex items-center w-32">
                     <img
