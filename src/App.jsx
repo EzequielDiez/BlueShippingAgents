@@ -10,15 +10,13 @@ import Contacto from './components/Contacto';
 function App() {
     return (
         <Router>
-            <Layout>
-                <Routes>
-                    <Route path="/" element={<Inicio />} />
-                    <Route path="/nosotros" element={<Nosotros />} />
-                    <Route path="/servicios" element={<Servicios />} />
-                    <Route path="/puertos" element={<Puertos />} />
-                    <Route path="/contacto" element={<Contacto />} />
-                </Routes>
-            </Layout>
+            <Routes>
+                <Route path="/" element={<Inicio />} />
+                <Route path="/nosotros" element={<Nosotros />} />
+                <Route path="/servicios" element={<Servicios />} />
+                <Route path="/puertos" element={<Puertos />} />
+                <Route path="/contacto" element={<Contacto />} />
+            </Routes>
         </Router>
     );
 }
