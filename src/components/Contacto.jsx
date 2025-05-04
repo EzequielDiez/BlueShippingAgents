@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from './Layout';
 
 const Contacto = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <Layout isInitialAnimation={false}>
             <div className="w-full font-sahar h-[75vh] grid grid-cols-2">

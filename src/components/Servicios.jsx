@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from './Layout';
 
 const Servicios = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <Layout isInitialAnimation={false}>
             <section className="relative py-20 mb-20">

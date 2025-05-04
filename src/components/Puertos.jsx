@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from './Layout';
 
 const Puertos = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <Layout isInitialAnimation={false}>
             <div className="flex flex-col items-center px-4 py-20">

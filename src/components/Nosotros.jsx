@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Layout from './Layout';
 
 const Nosotros = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <Layout isInitialAnimation={false}>
             <div className="container mx-auto px-4 py-20 font-sahar">

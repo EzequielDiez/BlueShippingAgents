@@ -1,33 +1,46 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-const Layout = ({ children, isInitialAnimation }) => {
-    const [showAnimation, setShowAnimation] = useState(isInitialAnimation);
+const Layout = ({ children }) => {
+    const location = useLocation();
+    // El estado inicial depende de si ya se ha animado
+    const [showAnimation, setShowAnimation] = useState(() => {
+        const hasAnimated = sessionStorage.getItem('hasAnimated');
+        return !hasAnimated && location.pathname === '/';
+    });
 
     useEffect(() => {
-        if (isInitialAnimation) {
-            // Inicialmente mostramos el cuadrado blanco
-            setShowAnimation(true);
-            
-            // Esperamos 2 segundos antes de iniciar la animación
+        // Verificar si ya se ha animado en esta sesión
+        const hasAnimated = sessionStorage.getItem('hasAnimated');
+
+        if (hasAnimated) {
+            // Si ya se ha animado, mantener el navbar pequeño
+            setShowAnimation(false);
+        } else if (location.pathname === '/') {
+            // Si es la página de inicio y no se ha animado antes
+            // El navbar ya está grande (por el estado inicial)
+            // Solo necesitamos achicarlo después de 1.5 segundos
             const timer = setTimeout(() => {
                 setShowAnimation(false);
-            }, 2000);
-            
+                // Guardar en sessionStorage que ya se ha animado
+                sessionStorage.setItem('hasAnimated', 'true');
+            }, 500);
+
             return () => clearTimeout(timer);
         } else {
-            // Si no es la animación inicial, no mostramos el cuadrado
+            // Si no es la página de inicio, mantener el navbar pequeño
             setShowAnimation(false);
         }
-    }, [isInitialAnimation]);
+    }, [location.pathname]);
 
     return (
         <div>
             <header>
                 <Navbar isInitialAnimation={showAnimation} />
             </header>
-            <main className={`transition-all duration-1500 ease-in-out ${showAnimation ? 'pt-[50vh]' : 'pt-24'}`}>
+            <main className={`transition-all duration-2500 ease-in-out ${showAnimation ? 'pt-[50vh]' : 'pt-24'}`}>
                 {children}
             </main>
             <Footer />

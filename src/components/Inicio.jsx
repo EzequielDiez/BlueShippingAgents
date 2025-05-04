@@ -1,28 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from './Layout';
 
 const Inicio = () => {
     const navigate = useNavigate();
-    const [isInitialAnimation, setIsInitialAnimation] = useState(true);
 
-    // Verificar si es la primera carga de la página
     useEffect(() => {
-        const hasAnimated = sessionStorage.getItem('hasAnimated');
-        if (hasAnimated) {
-            setIsInitialAnimation(false);
-        } else {
-            sessionStorage.setItem('hasAnimated', 'true');
-            // Solo ejecutar el timer si es la primera carga
-            const timer = setTimeout(() => {
-                setIsInitialAnimation(false);
-            }, 1500);
-            return () => clearTimeout(timer);
-        }
+        window.scrollTo(0, 0);
     }, []);
 
     return (
-        <Layout isInitialAnimation={isInitialAnimation}>
+        <Layout>
             <div>
                 <div className="relative h-[calc(100vh-6rem)] overflow-hidden">
                     <video
@@ -30,7 +18,7 @@ const Inicio = () => {
                         muted
                         loop
                         playsInline
-                        className={`absolute top-0 left-0 w-full h-full object-cover transition-all duration-3500 ease-in-out ${isInitialAnimation ? 'opacity-30' : 'opacity-100'}`}
+                        className="absolute top-0 left-0 w-full h-full object-cover transition-all duration-3500 ease-in-out opacity-100"
                     >
                         <source src="/videos/DJI_0184.webm" type="video/webm" />
                         Tu navegador no soporta el elemento de video.
