@@ -10,14 +10,14 @@ const Footer = () => {
     };
 
     return (
-        <footer className="w-full flex flex-col items-center mt-16 mb-4">
+        <footer className="w-full flex flex-col items-center mt-8 md:mt-16 mb-4 px-4">
             <img
                 src="/images/logo-footer.svg"
                 alt="Blue Shipping Agents Logo"
-                className="w-32 mb-10 select-none"
+                className="w-24 md:w-32 mb-6 md:mb-10 select-none"
             />
-            <nav className="mb-3 select-none">
-                <ul className="flex flex-row gap-10 md:gap-16 text-[#1D4F87] font-normal text-lg md:text-xl font-['Sahar']">
+            <nav className="mb-3 select-none w-full max-w-4xl mx-auto">
+                <ul className="footer-nav text-[#1D4F87] font-normal text-base md:text-lg lg:text-xl font-['Sahar']">
                     <li>
                         <Link
                             to="/"
@@ -61,23 +61,38 @@ const Footer = () => {
                     </li>
                 </ul>
             </nav>
-            <div className="w-full max-w-3xl border-t border-[#1D4F87] my-4" />
-            <div className="flex flex-row gap-6 mb-10 select-none">
+            <div className="w-full max-w-2xl px-4 border-t border-[#1D4F87] my-4" />
+            <div className="flex flex-row gap-6 mb-6 md:mb-10 select-none">
                 <img
                     src="/images/icono-facebook.svg"
                     alt="Facebook"
-                    className="w-9 h-9 cursor-pointer hover:opacity-80 transition-all duration-300 hover:scale-110"
+                    className="w-7 h-7 md:w-9 md:h-9 cursor-pointer hover:opacity-80 transition-all duration-300 hover:scale-110"
                 />
                 <img
                     src="/images/icono-instagram.svg"
                     alt="Instagram"
-                    className="w-9 h-9 cursor-pointer hover:opacity-80 transition-all duration-300 hover:scale-110"
+                    className="w-7 h-7 md:w-9 md:h-9 cursor-pointer hover:opacity-80 transition-all duration-300 hover:scale-110"
                 />
             </div>
-            <div className="text-[#1D4F87] text-center text-base font-['Sahar'] mb-10">
+            <div className="text-[#1D4F87] text-center text-sm md:text-base font-['Sahar'] mb-6 md:mb-10">
                 <div>© Blue Shipping Agents 2025, All rights reserved.</div>
                 <div>Desarrollado por Online Agencia Creativa.</div>
             </div>
+            <style jsx>{`
+                .footer-nav {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                }
+                @media (min-width: 768px) {
+                    .footer-nav {
+                        flex-direction: row;
+                        gap: 2rem;
+                    }
+                }
+            `}</style>
         </footer>
     );
 };
