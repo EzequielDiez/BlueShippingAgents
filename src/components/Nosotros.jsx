@@ -18,7 +18,7 @@ const Nosotros = () => {
                 </p>
 
                 <div className="grid gap-12 mb-12 max-w-7xl mx-auto">
-                    <div className="grid md:grid-cols-[55%_45%] rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_80px_rgba(0,0,0,0.6)] transition-shadow duration-300">
+                    <div className="grid md:grid-cols-[55%_45%] rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] transition-shadow duration-300">
                         <div className="h-full relative">
                             <img
                                 src="/images/imagen-nosotros-1.webp"
@@ -38,7 +38,7 @@ const Nosotros = () => {
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-[45%_55%] rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] hover:shadow-[0_30px_80px_rgba(0,0,0,0.6)] transition-shadow duration-300">
+                    <div className="grid md:grid-cols-[45%_55%] rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] transition-shadow duration-300">
                         <div className="bg-[#1D4F87] text-white p-8">
                             <h2 className="text-md sm:text-lg md:text-xl lg:text-2xl mb-4">VALORES</h2>
                             <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4 font-bold">Compromiso y Dedicación</h3>

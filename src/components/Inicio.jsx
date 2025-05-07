@@ -12,7 +12,7 @@ const Inicio = () => {
     return (
         <Layout>
             <div>
-                <div className="relative h-[calc(100vh-6rem)] overflow-hidden">
+                <div className="relative h-[calc(100vh-6rem)] sm:h-[calc(100vh-6rem)] md:h-[calc(100vh-6rem)] lg:h-[calc(100vh-6rem)] overflow-hidden">
                     <video
                         autoPlay
                         muted
@@ -298,6 +298,15 @@ const Inicio = () => {
                     }
                     .bg-white {
                         padding: 3rem 0;
+                    }
+
+                    /* Ajuste del contenedor del video para móviles */
+                    .relative.h-\\[calc\\(100vh-6rem\\)\\] {
+                        height: 50vh !important;
+                        min-height: 300px;
+                    }
+                    .relative.h-\\[calc\\(100vh-6rem\\)\\] video {
+                        object-position: center 30%;
                     }
                 }
                 @media (min-width: 768px) {

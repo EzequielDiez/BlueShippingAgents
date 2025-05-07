@@ -80,7 +80,7 @@ const Navbar = ({ isInitialAnimation }) => {
                     <div className={`language-toggle ${isFirstLoad ? 'transition-all duration-1000 delay-1000' : ''} ${showLinks ? 'opacity-100' : 'opacity-0'}`}>
                         <button
                             onClick={toggleLanguage}
-                            className="relative inline-flex items-center h-7 w-20 rounded-full bg-transparent border border-white transition-all duration-300 hover:bg-white/20 hover:shadow-lg cursor-pointer"
+                            className="relative inline-flex items-center h-7 w-20 rounded-full bg-transparent border border-white transition-all duration-300 hover:bg-white/20 hover:shadow-lg cursor-pointer z-50"
                         >
                             <span
                                 className={`absolute left-3 top-1/2 -translate-y-1/2 font-['Sahar'] font-bold z-20 transition-colors duration-300 ${isEnglish ? 'text-white' : 'text-[#1D4F87]'}`}
@@ -271,7 +271,7 @@ const Navbar = ({ isInitialAnimation }) => {
                                     <li className="py-4 w-full text-center">
                                         <button
                                             onClick={toggleLanguage}
-                                            className="relative inline-flex items-center h-7 w-20 rounded-full bg-transparent border border-white transition-all duration-300 hover:bg-white/20 hover:shadow-lg cursor-pointer"
+                                            className="relative inline-flex items-center h-7 w-20 rounded-full bg-transparent border border-white transition-all duration-300 hover:bg-white/20 hover:shadow-lg cursor-pointer overflow-hidden"
                                         >
                                             <span
                                                 className={`absolute left-3 top-1/2 -translate-y-1/2 font-['Sahar'] font-bold z-20 transition-colors duration-300 ${isEnglish ? 'text-white' : 'text-[#1D4F87]'}`}
@@ -297,6 +297,11 @@ const Navbar = ({ isInitialAnimation }) => {
                                 }
                                 .language-toggle {
                                     display: none;
+                                    position: absolute;
+                                    right: 1.5rem;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    z-index: 100;
                                 }
                                 .hamburger-button {
                                     display: block;
@@ -359,10 +364,6 @@ const Navbar = ({ isInitialAnimation }) => {
                                     }
                                     .language-toggle {
                                         display: block;
-                                        position: absolute;
-                                        right: 1.5rem;
-                                        top: 50%;
-                                        transform: translateY(-50%);
                                     }
                                 }
                                 @media (min-width: 1024px) {
