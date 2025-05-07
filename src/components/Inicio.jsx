@@ -43,11 +43,11 @@ const Inicio = () => {
                 </div>
 
                 {/* Nueva sección */}
-                <div className="relative flex h-[650px] sm:h-[800px] shadow-[0_-20px_30px_-15px_rgba(0,0,0,0.7),0_30px_40px_-15px_rgba(0,0,0,0.7)] z-10 services-section">
+                <div className="relative flex h-[550px] sm:h-[650px] md:h-[700px] shadow-[0_-20px_30px_-15px_rgba(0,0,0,0.7),0_20px_30px_-15px_rgba(0,0,0,0.7)] z-10 services-section" style={{ marginBottom: '-50px' }}>
                     {/* Sección izquierda - fondo blanco */}
                     <div className="w-1/2 bg-white flex flex-col justify-center items-center pl-4 sm:flex-row sm:h-1/2 md:flex-col md:h-full">
-                        <div className="services-content">
-                            <h2 className="text-[#1D4F87] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sahar font-bold mb-4 text-center">
+                        <div className="services-content px-4 sm:px-6 md:px-8">
+                            <h2 className="text-[#1D4F87] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sahar font-bold mb-3 text-center">
                                 NUESTROS SERVICIOS
                             </h2>
                             <p className="text-[#1D4F87] text-md sm:text-lg md:text-xl lg:text-2xl font-sahar text-center">
@@ -61,7 +61,7 @@ const Inicio = () => {
                         <img
                             src="/images/imagen-inicio-servicios.webp"
                             alt="Servicios"
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover object-[center_60%]"
                         />
                     </div>
 
@@ -79,7 +79,7 @@ const Inicio = () => {
                 </div>
 
                 {/* Sección presencia en puertos */}
-                <div className="bg-[#1D4F87] py-12 h-[870px] ports-section">
+                <div className="bg-[#1D4F87] h-[920px] ports-section relative z-0" style={{ marginTop: '-50px' }}>
                     <div className="max-w-6xl mx-auto flex items-center justify-center h-full">
                         {/* Mapa a la izquierda */}
                         <div className="w-1/2 flex justify-center">
@@ -106,9 +106,9 @@ const Inicio = () => {
                 </div>
 
                 {/* Sección contacto personalizada */}
-                <div className="flex justify-center items-center h-[600px]">
+                <div className="flex justify-center items-center h-[600px] contact-section">
                     {/* Cuadro azul */}
-                    <div className="relative bg-[#1D4F87] flex justify-between px-8 py-8 max-w-6xl h-[330px] rounded-2xl">
+                    <div className="relative bg-[#1D4F87] flex justify-between px-8 py-8 md:max-w-2xl lg:max-w-4xl xl:max-w-6xl h-[330px] rounded-2xl contact-box">
                         {/* Logo sobre el azul */}
                         <img
                             src="/images/logo-blanco-services.svg"
@@ -116,24 +116,24 @@ const Inicio = () => {
                             className="absolute opacity-10 left-[-36%] top-[-10%] w-[180%] h-[120%] object-contain pointer-events-none select-none"
                         />
                         {/* Contenido izquierdo */}
-                        <div className="relative z-10 flex flex-col justify-center w-1/2 pl-6">
-                            <p className="text-white text-2xl font-sahar mb-6">
+                        <div className="relative z-10 flex flex-col justify-center md:w-7/12 lg:w-1/2 pl-6 contact-content">
+                            <p className="text-white text-md sm:text-lg md:text-xl lg:text-2xl font-sahar mb-6">
                                 Estamos siempre disponibles para atender sus necesidades con innovación y mejora continua.
                             </p>
                             <button
                                 onClick={() => navigate('/contacto')}
-                                className="flex items-center bg-[#F7CA0F] text-[#1D4F87] font-bold py-1 px-3 rounded-lg text-2xl shadow hover:bg-yellow-400 hover:scale-105 transition-all duration-300 w-fit cursor-pointer"
+                                className="flex items-center bg-[#F7CA0F] text-[#1D4F87] font-bold py-1 px-3 rounded-lg text-md sm:text-lg md:text-xl lg:text-2xl shadow hover:bg-yellow-400 hover:scale-105 transition-all duration-300 w-fit cursor-pointer"
                             >
                                 <img src="/images/icono-mail.svg" alt="Mail" className="w-7 h-7 mr-3" />
                                 <span className="flex items-center pt-1">CONTACTANOS</span>
                             </button>
                         </div>
                         {/* Imagen a la derecha */}
-                        <div className="relative z-10 flex items-center justify-center overflow-visible">
+                        <div className="relative z-10 flex items-center justify-center contact-image">
                             <img
                                 src="/images/imagen-inicio-servicios.webp"
                                 alt="Equipo trabajando"
-                                className="object-cover w-[120%] h-[150%] rounded-2xl translate-x-[20%] shadow-[0_0_30px_rgba(0,0,0,0.8)]"
+                                className="object-cover w-full h-[150%] rounded-2xl translate-x-[12%] shadow-[0_0_30px_rgba(0,0,0,0.8)]"
                             />
                         </div>
                     </div>
@@ -146,6 +146,8 @@ const Inicio = () => {
                         flex-direction: column;
                         position: relative;
                         overflow: hidden;
+                        margin: 2rem 0;
+                        height: 550px !important;
                     }
                     .services-section > div {
                         width: 100% !important;
@@ -153,6 +155,7 @@ const Inicio = () => {
                     .services-section > div:first-child {
                         order: 1;
                         height: 50% !important;
+                        padding: 1.5rem 0;
                     }
                     .services-section > div:nth-child(2) {
                         order: 2;
@@ -178,7 +181,8 @@ const Inicio = () => {
                     /* Estilos para la sección de presencia en puertos en móvil */
                     .ports-section {
                         height: auto !important;
-                        padding: 2rem 0;
+                        padding: 4rem 0;
+                        margin: 3rem 0;
                     }
                     .ports-section > div {
                         flex-direction: column;
@@ -211,6 +215,90 @@ const Inicio = () => {
                     .ports-section > div > div:last-child button {
                         margin: 0 auto;
                     }
+
+                    /* Estilos para la sección de contacto en móvil */
+                    .contact-section {
+                        height: 600px !important;
+                        padding: 3rem 1rem;
+                        margin: 3rem 0;
+                    }
+                    .contact-box {
+                        width: 330px !important;
+                        height: 600px !important;
+                        flex-direction: column !important;
+                        padding: 2rem !important;
+                        align-items: center !important;
+                        overflow: visible !important;
+                    }
+                    .contact-content {
+                        width: 100% !important;
+                        padding-left: 0 !important;
+                        margin-bottom: 2rem;
+                        order: 2 !important;
+                        text-align: center !important;
+                        display: flex !important;
+                        flex-direction: column !important;
+                        align-items: center !important;
+                    }
+                    .contact-image {
+                        width: 180% !important;
+                        height: 60% !important;
+                        order: 1 !important;
+                        margin-bottom: 2rem !important;
+                        display: flex !important;
+                        justify-content: center !important;
+                        margin-left: -40% !important;
+                        position: relative !important;
+                        left: 0 !important;
+                        margin-top: -2rem !important;
+                    }
+                    .contact-image img {
+                        height: 100% !important;
+                        width: 100% !important;
+                        object-fit: cover !important;
+                        transform: none !important;
+                        border-radius: 1rem !important;
+                        position: relative !important;
+                        left: 0 !important;
+                    }
+
+                    /* Estilos específicos para xs (480px a 639px) */
+                    @media (min-width: 480px) and (max-width: 639px) {
+                        .contact-image {
+                            width: 160% !important;
+                            margin-left: -35% !important;
+                            height: 60% !important;
+                        }
+                        .contact-box {
+                            height: 500px !important;
+                        }
+                        .contact-section {
+                            height: 500px !important;
+                        }
+                    }
+
+                    /* Estilos para pantallas menores a 480px */
+                    @media (max-width: 479px) {
+                        .contact-image {
+                            width: 140% !important;
+                            margin-left: -35% !important;
+                            height: 60% !important;
+                        }
+                        .contact-box {
+                            height: 450px !important;
+                        }
+                        .contact-section {
+                            height: 450px !important;
+                        }
+                    }
+
+                    /* Ajuste del espaciado para la sección de bienvenida */
+                    .bg-\[\#1D4F87\] {
+                        padding: 3rem 0;
+                    }
+                    .bg-white {
+                        padding: 3rem 0;
+                    }
                 }
                 @media (min-width: 768px) {
                     .services-section > div:last-child {
@@ -224,17 +312,31 @@ const Inicio = () => {
                     flex-direction: column;
                     align-items: center;
                     width: 100%;
-                    max-width: 90%;
+                    max-width: 100%;
+                    padding: 0 1rem;
                 }
 
                 @media (min-width: 768px) {
                     .services-content {
                         align-items: flex-start;
-                        max-width: 40%;
+                        max-width: 90%;
+                        padding: 0 2rem;
                     }
                     .services-content h2,
                     .services-content p {
                         text-align: left !important;
+                    }
+                }
+
+                @media (min-width: 1280px) {
+                    .services-content {
+                        max-width: 70%;
+                    }
+                }
+
+                @media (min-width: 1536px) {
+                    .services-content {
+                        max-width: 60%;
                     }
                 }
             `}</style>

@@ -9,10 +9,10 @@ const Servicios = () => {
     return (
         <Layout isInitialAnimation={false}>
             <section className="relative py-20 mb-20">
-                <div className="max-w-7xl mx-auto">
+                <div className="xl:max-w-5xl 2xl:max-w-6xl mx-auto">
                     <div className="flex">
                         {/* Text content - left column */}
-                        <div className="w-1/2 pr-8 flex items-center">
+                        <div className="w-1/2 xl:pr-16 2xl:pr-8 flex items-center">
                             <div className="max-w-[600px]">
                                 <h2 className="text-4xl font-['Sahar'] font-bold mb-8 text-[#1D4F87]">NUESTROS SERVICIOS</h2>
                                 <p className="mb-6 text-xl text-[#1D4F87]">
@@ -31,7 +31,7 @@ const Servicios = () => {
                         </div>
 
                         {/* Images with blue background - right column */}
-                        <div className="w-1/2 relative flex justify-end">
+                        <div className="w-1/2 relative flex justify-center">
                             <div className="w-[400px] h-[700px] bg-[#1D4F87] rounded-3xl">
                                 <div className="flex flex-col items-center">
                                     <img
