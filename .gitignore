@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Build output
+# docs/  # Comentado para permitir el deploy en GitHub Pages
