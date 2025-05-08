@@ -107,7 +107,7 @@ const Navbar = ({ isInitialAnimation }) => {
                     }}>
                         <div className={`flex items-center justify-center transition-all duration-2500 ease-in-out absolute ${isInitialAnimation ? 'w-96 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2' : 'w-32 left-0 top-1/2 -translate-y-1/2'}`}>
                             <img
-                                src={isInitialAnimation ? "/images/logo-footer.svg" : "/images/logo-header.svg"}
+                                src={isInitialAnimation ? "./images/logo-footer.svg" : "./images/logo-header.svg"}
                                 alt="Blue Shipping Agents Logo"
                                 className={`w-full h-auto transition-all duration-2500 ease-in-out ${isInitialAnimation ? 'filter-none' : 'filter brightness-0 invert'}`}
                             />

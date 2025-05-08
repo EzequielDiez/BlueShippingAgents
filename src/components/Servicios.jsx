@@ -35,17 +35,17 @@ const Servicios = () => {
                             <div className="w-[400px] h-[700px] bg-[#1D4F87] rounded-3xl">
                                 <div className="flex flex-col items-center">
                                     <img
-                                        src="images/imagen-servicios-1.webp"
+                                        src="./images/imagen-servicios-1.webp"
                                         alt="Servicio marítimo 1"
                                         className="w-[230px] h-[230px] object-cover object-center rounded-3xl transform -translate-x-40 -translate-y-6 drop-shadow-[10px_10px_6px_rgba(0,0,0,0.5)]"
                                     />
                                     <img
-                                        src="images/imagen-servicios-2.webp"
+                                        src="./images/imagen-servicios-2.webp"
                                         alt="Servicio marítimo 2"
                                         className="w-[400px] h-[250px] object-cover rounded-3xl transform translate-x-12 drop-shadow-[10px_10px_6px_rgba(0,0,0,0.5),0_-5px_6px_rgba(0,0,0,0.2)]"
                                     />
                                     <img
-                                        src="images/imagen-servicios-3.webp"
+                                        src="./images/imagen-servicios-3.webp"
                                         alt="Servicio marítimo 3"
                                         className="w-[400px] h-[250px] object-cover rounded-3xl transform -translate-x-22 translate-y-6 drop-shadow-[10px_10px_6px_rgba(0,0,0,0.5),0_-5px_6px_rgba(0,0,0,0.2)]"
                                     />
