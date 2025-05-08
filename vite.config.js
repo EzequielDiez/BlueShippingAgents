@@ -9,7 +9,7 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
-  base: './',
+  base: '/BlueShippingAgents/',
   build: {
     outDir: 'docs',
     assetsDir: 'assets',
