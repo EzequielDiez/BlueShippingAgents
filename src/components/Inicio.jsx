@@ -1,13 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Layout from './Layout';
 
 const Inicio = () => {
     const navigate = useNavigate();
+    const [showGradient, setShowGradient] = useState(() => {
+        // Verificar si es la primera carga de la sesión
+        return !sessionStorage.getItem('gradientShown');
+    });
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+
+        if (showGradient) {
+            // Marcar que el degradado ya se mostró en esta sesión
+            sessionStorage.setItem('gradientShown', 'true');
+
+            // Ocultar el degradado después de 3 segundos
+            const timer = setTimeout(() => {
+                setShowGradient(false);
+            }, 3000);
+
+            return () => clearTimeout(timer);
+        }
+    }, [showGradient]);
 
     return (
         <Layout>
@@ -23,7 +39,9 @@ const Inicio = () => {
                         <source src="./videos/DJI_0184.webm" type="video/webm" />
                         Tu navegador no soporta el elemento de video.
                     </video>
-                    <div className="absolute inset-0 bg-gradient-to-b from-white from-70% via-white/50 via-85% to-transparent opacity-90 animate-fadeOut"></div>
+                    {showGradient && (
+                        <div className="absolute inset-0 bg-gradient-to-b from-white from-70% via-white/50 via-85% to-transparent opacity-90 animate-fadeOut"></div>
+                    )}
                 </div>
 
                 <div>
