@@ -27,7 +27,7 @@ const Contacto = () => {
                     <div className="bg-white text-[#1D4F87] flex justify-end items-start h-[45%] contact-bottom">
                         <div className="flex flex-col items-start max-w-2xl w-full px-16 pt-8 space-y-3">
                             <div className="flex items-start gap-3">
-                                <img src="/images/icono-telefono.svg" alt="Teléfono" className="w-6 h-6 mt-1" />
+                                <img src="./images/icono-telefono.svg" alt="Teléfono" className="w-6 h-6 mt-1" />
                                 <div>
                                     <p className="leading-tight text-md sm:text-lg md:text-xl">
                                         <a href="tel:+5491136879155" className="hover:underline">+54 9 11 3687-9155</a> /
@@ -37,7 +37,7 @@ const Contacto = () => {
                                 </div>
                             </div>
                             <div className="flex items-start gap-3">
-                                <img src="/images/icono-mail.svg" alt="Mail" className="w-6 h-6 mt-1" />
+                                <img src="./images/icono-mail.svg" alt="Mail" className="w-6 h-6 mt-1" />
                                 <div>
                                     <p className="leading-tight pt-1.5 text-md sm:text-lg md:text-xl">
                                         <a href="mailto:operations@bsa-agents.com" className="hover:underline">operations@bsa-agents.com</a>
@@ -45,7 +45,7 @@ const Contacto = () => {
                                 </div>
                             </div>
                             <div className="flex items-start gap-3">
-                                <img src="/images/icono-ubicacion.svg" alt="Ubicación" className="w-6 h-6 mt-1" />
+                                <img src="./images/icono-ubicacion.svg" alt="Ubicación" className="w-6 h-6 mt-1" />
                                 <div>
                                     <p className="leading-tight text-md sm:text-lg md:text-xl">
                                         <a href="https://maps.app.goo.gl/Dbz1AGkCjE2wyLaK8" target="_blank" rel="noopener noreferrer" className="hover:underline">

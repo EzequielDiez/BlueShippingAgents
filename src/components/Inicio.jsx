@@ -20,7 +20,7 @@ const Inicio = () => {
                         playsInline
                         className="absolute top-0 left-0 w-full h-full object-cover transition-all duration-3500 ease-in-out opacity-100"
                     >
-                        <source src="/videos/DJI_0184.webm" type="video/webm" />
+                        <source src="./videos/DJI_0184.webm" type="video/webm" />
                         Tu navegador no soporta el elemento de video.
                     </video>
                 </div>
@@ -59,7 +59,7 @@ const Inicio = () => {
                     {/* Sección derecha - imagen */}
                     <div className="w-1/2 relative sm:h-1/2 md:h-full">
                         <img
-                            src="/images/imagen-inicio-servicios.webp"
+                            src="./images/imagen-inicio-servicios.webp"
                             alt="Servicios"
                             className="w-full h-full object-cover object-[center_60%]"
                         />
@@ -69,7 +69,7 @@ const Inicio = () => {
                     <div className="absolute left-1/2 top-1/2 z-10 w-1/2 h-full sm:left-0 sm:top-auto sm:bottom-0 sm:translate-y-0 sm:!translate-y-0 md:top-1/2 md:-translate-y-1/2">
                         <div className="relative h-full sm:h-1/2">
                             <img
-                                src="/images/logo-blanco-services.svg"
+                                src="./images/logo-blanco-services.svg"
                                 alt="Logo Services"
                                 className="h-full w-auto object-contain [filter:drop-shadow(5px_0_3px_rgba(29,79,135,0.5))]"
                             />
@@ -84,7 +84,7 @@ const Inicio = () => {
                         {/* Mapa a la izquierda */}
                         <div className="w-1/2 flex justify-center">
                             <img
-                                src="/images/mapa-inicio.webp"
+                                src="./images/mapa-inicio.webp"
                                 alt="Mapa de puertos"
                                 className="max-h-[585px] w-auto"
                             />
@@ -111,7 +111,7 @@ const Inicio = () => {
                     <div className="relative bg-[#1D4F87] flex justify-between px-8 py-8 md:max-w-2xl lg:max-w-4xl xl:max-w-6xl h-[330px] rounded-2xl contact-box">
                         {/* Logo sobre el azul */}
                         <img
-                            src="/images/logo-blanco-services.svg"
+                            src="./images/logo-blanco-services.svg"
                             alt="Logo"
                             className="absolute opacity-10 left-[-36%] top-[-10%] w-[180%] h-[120%] object-contain pointer-events-none select-none"
                         />
@@ -124,14 +124,14 @@ const Inicio = () => {
                                 onClick={() => navigate('/contacto')}
                                 className="flex items-center bg-[#F7CA0F] text-[#1D4F87] font-bold py-1 px-3 rounded-lg text-md sm:text-lg md:text-xl lg:text-2xl shadow hover:bg-yellow-400 hover:scale-105 transition-all duration-300 w-fit cursor-pointer"
                             >
-                                <img src="/images/icono-mail.svg" alt="Mail" className="w-7 h-7 mr-3" />
+                                <img src="./images/icono-mail.svg" alt="Mail" className="w-7 h-7 mr-3" />
                                 <span className="flex items-center pt-1">CONTACTANOS</span>
                             </button>
                         </div>
                         {/* Imagen a la derecha */}
                         <div className="relative z-10 flex items-center justify-center contact-image">
                             <img
-                                src="/images/imagen-inicio-servicios.webp"
+                                src="./images/imagen-inicio-servicios.webp"
                                 alt="Equipo trabajando"
                                 className="object-cover w-full h-[150%] rounded-2xl translate-x-[12%] shadow-[0_0_30px_rgba(0,0,0,0.8)]"
                             />

@@ -12,7 +12,7 @@ const Footer = () => {
     return (
         <footer className="w-full flex flex-col items-center mt-8 md:mt-16 mb-4 px-4">
             <img
-                src="/images/logo-footer.svg"
+                src="./images/logo-footer.svg"
                 alt="Blue Shipping Agents Logo"
                 className="w-24 md:w-32 mb-6 md:mb-10 select-none"
             />
@@ -64,12 +64,12 @@ const Footer = () => {
             <div className="w-full max-w-2xl px-4 border-t border-[#1D4F87] my-4" />
             <div className="flex flex-row gap-6 mb-6 md:mb-10 select-none">
                 <img
-                    src="/images/icono-facebook.svg"
+                    src="./images/icono-facebook.svg"
                     alt="Facebook"
                     className="w-7 h-7 md:w-9 md:h-9 cursor-pointer hover:opacity-80 transition-all duration-300 hover:scale-110"
                 />
                 <img
-                    src="/images/icono-instagram.svg"
+                    src="./images/icono-instagram.svg"
                     alt="Instagram"
                     className="w-7 h-7 md:w-9 md:h-9 cursor-pointer hover:opacity-80 transition-all duration-300 hover:scale-110"
                 />

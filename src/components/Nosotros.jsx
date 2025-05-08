@@ -21,7 +21,7 @@ const Nosotros = () => {
                     <div className="grid md:grid-cols-[55%_45%] rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.5)] transition-shadow duration-300">
                         <div className="h-full relative">
                             <img
-                                src="/images/imagen-nosotros-1.webp"
+                                src="./images/imagen-nosotros-1.webp"
                                 alt="Puerto marítimo con contenedores"
                                 className="w-full h-full object-cover object-[50%_50%] relative z-10 shadow-[10px_0_30px_5px_rgba(0,0,0,0.4)]"
                             />
@@ -54,7 +54,7 @@ const Nosotros = () => {
                         </div>
                         <div className="h-full">
                             <img
-                                src="/images/imagen-nosotros-2.webp"
+                                src="./images/imagen-nosotros-2.webp"
                                 alt="Barco crucero en puerto"
                                 className="w-full h-full object-cover object-[50%_50%] shadow-[-10px_0_30px_5px_rgba(0,0,0,0.4)]"
                             />
