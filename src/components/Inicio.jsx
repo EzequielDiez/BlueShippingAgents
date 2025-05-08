@@ -23,6 +23,7 @@ const Inicio = () => {
                         <source src="./videos/DJI_0184.webm" type="video/webm" />
                         Tu navegador no soporta el elemento de video.
                     </video>
+                    <div className="absolute inset-0 bg-gradient-to-b from-white from-70% via-white/50 via-85% to-transparent opacity-90 animate-fadeOut"></div>
                 </div>
 
                 <div>
@@ -141,6 +142,19 @@ const Inicio = () => {
             </div>
 
             <style jsx>{`
+                @keyframes fadeOut {
+                    0% {
+                        opacity: 0.9;
+                    }
+                    100% {
+                        opacity: 0;
+                    }
+                }
+
+                .animate-fadeOut {
+                    animation: fadeOut 3s ease-in-out forwards;
+                }
+
                 @media (max-width: 767px) {
                     .services-section {
                         flex-direction: column;
