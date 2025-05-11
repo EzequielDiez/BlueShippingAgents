@@ -5,16 +5,20 @@ import Nosotros from './components/Nosotros';
 import Servicios from './components/Servicios';
 import Puertos from './components/Puertos';
 import Contacto from './components/Contacto';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
     return (
-        <Routes>
-            <Route path="/" element={<Inicio />} />
-            <Route path="/nosotros" element={<Nosotros />} />
-            <Route path="/servicios" element={<Servicios />} />
-            <Route path="/puertos" element={<Puertos />} />
-            <Route path="/contacto" element={<Contacto />} />
-        </Routes>
+        <>
+            <Routes>
+                <Route path="/" element={<Inicio />} />
+                <Route path="/nosotros" element={<Nosotros />} />
+                <Route path="/servicios" element={<Servicios />} />
+                <Route path="/puertos" element={<Puertos />} />
+                <Route path="/contacto" element={<Contacto />} />
+            </Routes>
+            <WhatsAppButton />
+        </>
     );
 }
 
