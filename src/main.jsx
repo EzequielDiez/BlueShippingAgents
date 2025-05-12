@@ -8,7 +8,7 @@ import './i18n' // Importar configuración de i18n
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/BlueShippingAgents/">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
