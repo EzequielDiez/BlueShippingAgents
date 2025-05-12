@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "ports": "Ports",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "WELCOME TO BLUE SHIPPING AGENTS",
+    "description": "We are a team of professionals with over 30 years of experience in international maritime trade. Our commitment is to provide an excellent personalized service, based on efficiency, honesty, and hard work. We anticipate market challenges to provide effective solutions and ensure our clients' peace of mind.",
+    "services": {
+      "title": "OUR SERVICES",
+      "description": "We provide maritime and port agency services, including crew changes, spare parts management, and assistance to crews and passengers. Additionally, we optimize logistics by combining land and maritime transport, ensuring quality and efficiency in every operation."
+    },
+    "ports": {
+      "title": "PORT PRESENCE",
+      "description": "We operate in all Argentine ports, from Santa Fe to Ushuaia, with a network of highly trained sub-agents and the support of advanced technology. We offer a reliable and secure service, adapted to each client's needs.",
+      "button": "SEE MORE"
+    },
+    "contact": {
+      "description": "We are always available to attend to your needs with innovation and continuous improvement.",
+      "button": "CONTACT US"
+    }
+  },
+  "about": {
+    "title": "ABOUT US",
+    "description": "BLUE SHIPPING AGENTS was founded by a group of experienced professionals with extensive training in international maritime trade, accumulating over 30 years of market experience.",
+    "objective": {
+      "title": "OUR OBJECTIVE",
+      "subtitle": "Excellent Personalized Service",
+      "description": "Our main objective has been to establish a dynamic and highly professional work team that, backed by the vast experience acquired over the years, can offer an excellent personalized service to meet our clients' needs in the demanding and changing context of today's market."
+    },
+    "values": {
+      "title": "VALUES",
+      "subtitle": "Commitment and Dedication",
+      "description": "We have launched this challenge under the pillars of hard work, efficiency, and honesty, values that have been central to our work over time. We are connected and available year-round. We manage time, information, and documentation with precision and diligence, anticipating possible delays and problems before they occur. In this way, we achieve offering each of our clients the peace of mind necessary for them to develop their activities satisfactorily."
+    }
+  },
+  "services": {
+    "title": "OUR SERVICES",
+    "description": {
+      "part1": "Complementing the agency service, we actively provide different port services. We offer management and coordination in crew changes, pickup and delivery of spare parts and/or materials, assistance to crew members and passengers, as well as project cargo management, heavy packages, steel products, grains, by-products, minerals, bulk oil, or palletized cargo.",
+      "part2": "Additionally, multimodal transport is an excellent option to optimize logistics, especially when dealing with different types of cargo and volumes.",
+      "part3": "By combining land logistics with maritime transport, efficiency is improved and compliance with required quality and demanding standards is guaranteed.",
+      "part4": "This is fundamental to achieve total satisfaction of the proposed objectives."
+    }
+  },
+  "ports": {
+    "title": "PORTS",
+    "description": {
+      "part1": "We cover all Argentine ports, from Corrientes on the Paraná River to Ushuaia, the southernmost city in the world. We have operational management in Uruguay Port and Loading Zones.",
+      "part2": "We have our own staff in Buenos Aires and a select, professional, and highly trained network of sub-agents. With cutting-edge telecommunications technology, we demonstrate our effectiveness daily, with efficiency as our horizon in every task we perform.",
+      "part3": "We provide a personalized service to our clients, with the highest quality standards, based on the reliability and security of our communications, along with an experienced staff of professionals."
+    }
+  },
+  "contact": {
+    "title": "CONTACT",
+    "description": {
+      "part1": "Thanks to the support received from our clients, our company is positioning itself among the most reliable and efficient in the market.",
+      "part2": "Therefore, the commitment assumed from the beginning remains in force, offering day by day innovation and continuous improvements in our process, convinced that this is the best way to respond to those who trust in BLUE SHIPPING AGENTS"
+    },
+    "form": {
+      "title": "Send us a message",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "send": "Send"
+    },
+    "address": "Olavarría 170 - C1162ABD - Ciudad Autónoma de Buenos Aires, Argentina."
+  }
+} 

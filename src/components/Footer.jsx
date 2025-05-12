@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+    const { t } = useTranslation();
+    
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -24,7 +27,7 @@ const Footer = () => {
                             onClick={scrollToTop}
                             className="inline-block cursor-pointer hover:text-[#0D3A6A] transition-all duration-300 hover:scale-110"
                         >
-                            INICIO
+                            {t('nav.home').toUpperCase()}
                         </Link>
                     </li>
                     <li>
@@ -32,7 +35,7 @@ const Footer = () => {
                             to="/nosotros"
                             className="inline-block cursor-pointer hover:text-[#0D3A6A] transition-all duration-300 hover:scale-110"
                         >
-                            NOSOTROS
+                            {t('nav.about').toUpperCase()}
                         </Link>
                     </li>
                     <li>
@@ -40,7 +43,7 @@ const Footer = () => {
                             to="/servicios"
                             className="inline-block cursor-pointer hover:text-[#0D3A6A] transition-all duration-300 hover:scale-110"
                         >
-                            SERVICIOS
+                            {t('nav.services').toUpperCase()}
                         </Link>
                     </li>
                     <li>
@@ -48,7 +51,7 @@ const Footer = () => {
                             to="/puertos"
                             className="inline-block cursor-pointer hover:text-[#0D3A6A] transition-all duration-300 hover:scale-110"
                         >
-                            PUERTOS
+                            {t('nav.ports').toUpperCase()}
                         </Link>
                     </li>
                     <li>
@@ -56,7 +59,7 @@ const Footer = () => {
                             to="/contacto"
                             className="inline-block cursor-pointer hover:text-[#0D3A6A] transition-all duration-300 hover:scale-110"
                         >
-                            CONTACTO
+                            {t('nav.contact').toUpperCase()}
                         </Link>
                     </li>
                 </ul>

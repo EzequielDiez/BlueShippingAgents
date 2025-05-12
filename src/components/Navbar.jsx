@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = ({ isInitialAnimation }) => {
     const location = useLocation();
     const navigate = useNavigate();
-    const [isEnglish, setIsEnglish] = useState(false);
+    const { t } = useTranslation();
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [showLinks, setShowLinks] = useState(false);
@@ -58,10 +60,6 @@ const Navbar = ({ isInitialAnimation }) => {
         return location.pathname === path;
     };
 
-    const toggleLanguage = () => {
-        setIsEnglish(!isEnglish);
-    };
-
     const shouldAnimate = isFirstLoad;
 
     const toggleMobileMenu = () => {
@@ -78,24 +76,7 @@ const Navbar = ({ isInitialAnimation }) => {
             {!isInitialAnimation && (
                 <div className="absolute right-4 h-full flex items-center">
                     <div className={`language-toggle ${isFirstLoad ? 'transition-all duration-1000 delay-1000' : ''} ${showLinks ? 'opacity-100' : 'opacity-0'}`}>
-                        <button
-                            onClick={toggleLanguage}
-                            className="relative inline-flex items-center h-7 w-20 rounded-full bg-transparent border border-white transition-all duration-300 hover:bg-white/20 hover:shadow-lg cursor-pointer z-50"
-                        >
-                            <span
-                                className={`absolute left-3 top-1/2 -translate-y-1/2 font-['Sahar'] font-bold z-20 transition-colors duration-300 ${isEnglish ? 'text-white' : 'text-[#1D4F87]'}`}
-                            >
-                                ES
-                            </span>
-                            <span
-                                className={`absolute right-3 top-1/2 -translate-y-1/2 font-['Sahar'] font-bold z-20 transition-colors duration-300 ${isEnglish ? 'text-[#1D4F87]' : 'text-white'}`}
-                            >
-                                EN
-                            </span>
-                            <span
-                                className={`absolute h-7 w-10 rounded-full bg-white transition-transform duration-300 ease-in-out shadow-md z-10 ${isEnglish ? 'translate-x-10' : 'translate-x-0'}`}
-                            />
-                        </button>
+                        <LanguageSwitcher />
                     </div>
                 </div>
             )}
@@ -124,7 +105,7 @@ const Navbar = ({ isInitialAnimation }) => {
                                             handleNavigation('/');
                                         }} className={`text-white no-underline font-['Sahar'] relative group flex items-center h-full ${isFirstLoad ? 'transition-all duration-1000 delay-0' : ''} ${showLinks ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                                             <span className={`absolute -left-2 top-2.5 -translate-y-1/2 h-5 w-1.5 bg-gradient-to-r from-white to-[#1D4F87] ${isActive('/') ? 'w-[calc(100%+2rem)]' : 'group-hover:w-[calc(100%+2rem)]'} transition-all duration-300`}></span>
-                                            <span className={`pl-4 relative z-10 ${isActive('/') ? 'text-[#1D4F87]' : 'group-hover:text-[#1D4F87]'} transition-colors duration-300`}>INICIO</span>
+                                            <span className={`pl-4 relative z-10 ${isActive('/') ? 'text-[#1D4F87]' : 'group-hover:text-[#1D4F87]'} transition-colors duration-300 uppercase`}>{t('nav.home')}</span>
                                         </Link>
                                     </li>
                                     <li>
@@ -133,7 +114,7 @@ const Navbar = ({ isInitialAnimation }) => {
                                             handleNavigation('/nosotros');
                                         }} className={`text-white no-underline font-['Sahar'] relative group flex items-center h-full ${isFirstLoad ? 'transition-all duration-1000 delay-200' : ''} ${showLinks ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                                             <span className={`absolute -left-2 top-2.5 -translate-y-1/2 h-5 w-1.5 bg-gradient-to-r from-white to-[#1D4F87] ${isActive('/nosotros') ? 'w-[calc(100%+2rem)]' : 'group-hover:w-[calc(100%+2rem)]'} transition-all duration-300`}></span>
-                                            <span className={`pl-4 relative z-10 ${isActive('/nosotros') ? 'text-[#1D4F87]' : 'group-hover:text-[#1D4F87]'} transition-colors duration-300`}>NOSOTROS</span>
+                                            <span className={`pl-4 relative z-10 ${isActive('/nosotros') ? 'text-[#1D4F87]' : 'group-hover:text-[#1D4F87]'} transition-colors duration-300 uppercase`}>{t('nav.about')}</span>
                                         </Link>
                                     </li>
                                     <li>
@@ -142,7 +123,7 @@ const Navbar = ({ isInitialAnimation }) => {
                                             handleNavigation('/servicios');
                                         }} className={`text-white no-underline font-['Sahar'] relative group flex items-center h-full ${isFirstLoad ? 'transition-all duration-1000 delay-400' : ''} ${showLinks ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                                             <span className={`absolute -left-2 top-2.5 -translate-y-1/2 h-5 w-1.5 bg-gradient-to-r from-white to-[#1D4F87] ${isActive('/servicios') ? 'w-[calc(100%+2rem)]' : 'group-hover:w-[calc(100%+2rem)]'} transition-all duration-300`}></span>
-                                            <span className={`pl-4 relative z-10 ${isActive('/servicios') ? 'text-[#1D4F87]' : 'group-hover:text-[#1D4F87]'} transition-colors duration-300`}>SERVICIOS</span>
+                                            <span className={`pl-4 relative z-10 ${isActive('/servicios') ? 'text-[#1D4F87]' : 'group-hover:text-[#1D4F87]'} transition-colors duration-300 uppercase`}>{t('nav.services')}</span>
                                         </Link>
                                     </li>
                                     <li>
@@ -151,7 +132,7 @@ const Navbar = ({ isInitialAnimation }) => {
                                             handleNavigation('/puertos');
                                         }} className={`text-white no-underline font-['Sahar'] relative group flex items-center h-full ${isFirstLoad ? 'transition-all duration-1000 delay-600' : ''} ${showLinks ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                                             <span className={`absolute -left-2 top-2.5 -translate-y-1/2 h-5 w-1.5 bg-gradient-to-r from-white to-[#1D4F87] ${isActive('/puertos') ? 'w-[calc(100%+2rem)]' : 'group-hover:w-[calc(100%+2rem)]'} transition-all duration-300`}></span>
-                                            <span className={`pl-4 relative z-10 ${isActive('/puertos') ? 'text-[#1D4F87]' : 'group-hover:text-[#1D4F87]'} transition-colors duration-300`}>PUERTOS</span>
+                                            <span className={`pl-4 relative z-10 ${isActive('/puertos') ? 'text-[#1D4F87]' : 'group-hover:text-[#1D4F87]'} transition-colors duration-300 uppercase`}>{t('nav.ports')}</span>
                                         </Link>
                                     </li>
                                     <li>
@@ -160,7 +141,7 @@ const Navbar = ({ isInitialAnimation }) => {
                                             handleNavigation('/contacto');
                                         }} className={`text-white no-underline font-['Sahar'] relative group flex items-center h-full ${isFirstLoad ? 'transition-all duration-1000 delay-800' : ''} ${showLinks ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                                             <span className={`absolute -left-2 top-2.5 -translate-y-1/2 h-5 w-1.5 bg-gradient-to-r from-white to-[#1D4F87] ${isActive('/contacto') ? 'w-[calc(100%+2rem)]' : 'group-hover:w-[calc(100%+2rem)]'} transition-all duration-300`}></span>
-                                            <span className={`pl-4 relative z-10 ${isActive('/contacto') ? 'text-[#1D4F87]' : 'group-hover:text-[#1D4F87]'} transition-colors duration-300`}>CONTACTO</span>
+                                            <span className={`pl-4 relative z-10 ${isActive('/contacto') ? 'text-[#1D4F87]' : 'group-hover:text-[#1D4F87]'} transition-colors duration-300 uppercase`}>{t('nav.contact')}</span>
                                         </Link>
                                     </li>
                                 </ul>
@@ -213,7 +194,7 @@ const Navbar = ({ isInitialAnimation }) => {
                                             }}
                                             className={`text-white no-underline font-['Sahar'] relative group flex items-center justify-center w-full py-2 ${isActive('/') ? 'bg-gradient-to-r from-[#1D4F87] via-white to-[#1D4F87] text-[#1D4F87]' : 'hover:bg-white/10'}`}
                                         >
-                                            <span className="relative z-10">INICIO</span>
+                                            <span className="relative z-10 uppercase">{t('nav.home')}</span>
                                         </Link>
                                     </li>
                                     <li className="py-2 w-full text-center">
@@ -226,7 +207,7 @@ const Navbar = ({ isInitialAnimation }) => {
                                             }}
                                             className={`text-white no-underline font-['Sahar'] relative group flex items-center justify-center w-full py-2 ${isActive('/nosotros') ? 'bg-gradient-to-r from-[#1D4F87] via-white to-[#1D4F87] text-[#1D4F87]' : 'hover:bg-white/10'}`}
                                         >
-                                            <span className="relative z-10">NOSOTROS</span>
+                                            <span className="relative z-10 uppercase">{t('nav.about')}</span>
                                         </Link>
                                     </li>
                                     <li className="py-2 w-full text-center">
@@ -239,7 +220,7 @@ const Navbar = ({ isInitialAnimation }) => {
                                             }}
                                             className={`text-white no-underline font-['Sahar'] relative group flex items-center justify-center w-full py-2 ${isActive('/servicios') ? 'bg-gradient-to-r from-[#1D4F87] via-white to-[#1D4F87] text-[#1D4F87]' : 'hover:bg-white/10'}`}
                                         >
-                                            <span className="relative z-10">SERVICIOS</span>
+                                            <span className="relative z-10 uppercase">{t('nav.services')}</span>
                                         </Link>
                                     </li>
                                     <li className="py-2 w-full text-center">
@@ -252,7 +233,7 @@ const Navbar = ({ isInitialAnimation }) => {
                                             }}
                                             className={`text-white no-underline font-['Sahar'] relative group flex items-center justify-center w-full py-2 ${isActive('/puertos') ? 'bg-gradient-to-r from-[#1D4F87] via-white to-[#1D4F87] text-[#1D4F87]' : 'hover:bg-white/10'}`}
                                         >
-                                            <span className="relative z-10">PUERTOS</span>
+                                            <span className="relative z-10 uppercase">{t('nav.ports')}</span>
                                         </Link>
                                     </li>
                                     <li className="py-2 w-full text-center">
@@ -265,28 +246,11 @@ const Navbar = ({ isInitialAnimation }) => {
                                             }}
                                             className={`text-white no-underline font-['Sahar'] relative group flex items-center justify-center w-full py-2 ${isActive('/contacto') ? 'bg-gradient-to-r from-[#1D4F87] via-white to-[#1D4F87] text-[#1D4F87]' : 'hover:bg-white/10'}`}
                                         >
-                                            <span className="relative z-10">CONTACTO</span>
+                                            <span className="relative z-10 uppercase">{t('nav.contact')}</span>
                                         </Link>
                                     </li>
                                     <li className="py-4 w-full text-center">
-                                        <button
-                                            onClick={toggleLanguage}
-                                            className="relative inline-flex items-center h-7 w-20 rounded-full bg-transparent border border-white transition-all duration-300 hover:bg-white/20 hover:shadow-lg cursor-pointer overflow-hidden"
-                                        >
-                                            <span
-                                                className={`absolute left-3 top-1/2 -translate-y-1/2 font-['Sahar'] font-bold z-20 transition-colors duration-300 ${isEnglish ? 'text-white' : 'text-[#1D4F87]'}`}
-                                            >
-                                                ES
-                                            </span>
-                                            <span
-                                                className={`absolute right-3 top-1/2 -translate-y-1/2 font-['Sahar'] font-bold z-20 transition-colors duration-300 ${isEnglish ? 'text-[#1D4F87]' : 'text-white'}`}
-                                            >
-                                                EN
-                                            </span>
-                                            <span
-                                                className={`absolute h-7 w-10 rounded-full bg-white transition-transform duration-300 ease-in-out shadow-md z-10 ${isEnglish ? 'translate-x-10' : 'translate-x-0'}`}
-                                            />
-                                        </button>
+                                        <LanguageSwitcher />
                                     </li>
                                 </ul>
                             </div>

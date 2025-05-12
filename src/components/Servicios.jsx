@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import Layout from './Layout';
+import { useTranslation } from 'react-i18next';
 
 const Servicios = () => {
+    const { t } = useTranslation();
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -10,22 +13,22 @@ const Servicios = () => {
         <Layout isInitialAnimation={false}>
             <section className="relative py-20 xl:pt-32 mb-20">
                 <div className="xl:max-w-5xl 2xl:max-w-7xl mx-auto">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-['Sahar'] font-bold mb-8 text-[#1D4F87] custom-title">NUESTROS SERVICIOS</h2>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-['Sahar'] font-bold mb-8 text-[#1D4F87] custom-title">{t('services.title')}</h2>
                     <div className="flex custom-content-container">
                         {/* Text content - left column */}
                         <div className="w-1/2 xl:pr-16 2xl:pr-8 flex items-center custom-text-container">
                             <div className="max-w-[600px]">
                                 <p className="mb-6 text-md sm:text-lg md:text-xl lg:text-2xl text-[#1D4F87]">
-                                    Complementando el servicio de agenciamiento, nos dedicamos activamente a prestar diferentes servicios portuarios. Ofrecemos gestión y coordinación en el cambio de tripulantes, retiro y entrega de repuestos y/o materiales, asistencia a tripulantes y pasajeros, así como también la gestión de cargas de proyecto, bultos pesados, productos siderúrgicos, granos, subproductos, minerales, petróleo a granel u cargas paletizadas.
+                                    {t('services.description.part1')}
                                 </p>
                                 <p className="mb-6 text-md sm:text-lg md:text-xl lg:text-2xl text-[#1D4F87]">
-                                    Además, el transporte multimodal es una excelente opción para optimizar la logística, especialmente cuando se trata de diferentes tipos de cargas y volúmenes.
+                                    {t('services.description.part2')}
                                 </p>
                                 <p className="mb-6 text-md sm:text-lg md:text-xl lg:text-2xl text-[#1D4F87]">
-                                    Al combinar la logística terrestre con el transporte marítimo, se mejora la eficiencia y se garantiza el cumplimiento de los estándares de calidad y exigencia requeridos.
+                                    {t('services.description.part3')}
                                 </p>
                                 <p className="text-md sm:text-lg md:text-xl lg:text-2xl text-[#1D4F87]">
-                                    Esto es fundamental para lograr la satisfacción total de los objetivos propuestos.
+                                    {t('services.description.part4')}
                                 </p>
                             </div>
                         </div>

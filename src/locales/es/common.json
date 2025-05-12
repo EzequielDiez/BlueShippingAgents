@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "ports": "Puertos",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "BIENVENIDOS A BLUE SHIPPING AGENTS",
+    "description": "Somos un equipo de profesionales con más de 30 años de experiencia en el comercio internacional marítimo. Nuestro compromiso es ofrecer un servicio personalizado de excelencia, basado en la eficiencia, la honestidad y el trabajo arduo. Nos anticipamos a los desafíos del mercado para brindar soluciones efectivas y garantizar la tranquilidad de nuestros clientes.",
+    "services": {
+      "title": "NUESTROS SERVICIOS",
+      "description": "Proporcionamos servicios de agenciamiento marítimo y portuario, incluyendo cambio de tripulantes, gestión de repuestos y asistencia a tripulaciones y pasajeros. Además, optimizamos la logística combinando transporte terrestre y marítimo, garantizando calidad y eficiencia en cada operación."
+    },
+    "ports": {
+      "title": "PRESENCIA EN PUERTOS",
+      "description": "Operamos en todos los puertos argentinos, desde Santa Fe hasta Ushuaia, con una red de subagentes altamente capacitados y el respaldo de tecnología avanzada. Ofrecemos un servicio confiable y seguro, adaptado a las necesidades de cada cliente.",
+      "button": "VER MÁS"
+    },
+    "contact": {
+      "description": "Estamos siempre disponibles para atender sus necesidades con innovación y mejora continua.",
+      "button": "CONTACTANOS"
+    }
+  },
+  "about": {
+    "title": "SOBRE NOSOTROS",
+    "description": "BLUE SHIPPING AGENTS ha sido fundada por un grupo de experimentados profesionales con amplia capacitación en el ámbito del comercio internacional marítimo, acumulando más de 30 años de trayectoria en el mercado.",
+    "objective": {
+      "title": "NUESTRO OBJETIVO",
+      "subtitle": "Servicio Personalizado de Excelencia",
+      "description": "Nuestro objetivo principal ha sido establecer un equipo de trabajo dinámico y altamente profesional que, respaldado por la vasta experiencia adquirida a lo largo de los años, pueda ofrecer un servicio personalizado de excelencia para satisfacer las necesidades de nuestros clientes en el exigente y cambiante contexto del mercado actual."
+    },
+    "values": {
+      "title": "VALORES",
+      "subtitle": "Compromiso y Dedicación",
+      "description": "Nos hemos lanzado a este desafío bajo los pilares del trabajo arduo, la eficiencia y la honestidad, valores que han sido centrales en nuestra labor a lo largo del tiempo. Estamos conectados y disponibles durante todo el año. Nos encargamos de gestionar los tiempos, la información y la documentación con precisión y diligencia, anticipándonos a posibles demoras y problemas antes de que ocurran. De esta manera, logramos ofrecer a cada uno de nuestros clientes la tranquilidad necesaria para que puedan desarrollar sus actividades de manera satisfactoria."
+    }
+  },
+  "services": {
+    "title": "NUESTROS SERVICIOS",
+    "description": {
+      "part1": "Complementando el servicio de agenciamiento, nos dedicamos activamente a prestar diferentes servicios portuarios. Ofrecemos gestión y coordinación en el cambio de tripulantes, retiro y entrega de repuestos y/o materiales, asistencia a tripulantes y pasajeros, así como también la gestión de cargas de proyecto, bultos pesados, productos siderúrgicos, granos, subproductos, minerales, petróleo a granel u cargas paletizadas.",
+      "part2": "Además, el transporte multimodal es una excelente opción para optimizar la logística, especialmente cuando se trata de diferentes tipos de cargas y volúmenes.",
+      "part3": "Al combinar la logística terrestre con el transporte marítimo, se mejora la eficiencia y se garantiza el cumplimiento de los estándares de calidad y exigencia requeridos.",
+      "part4": "Esto es fundamental para lograr la satisfacción total de los objetivos propuestos."
+    }
+  },
+  "ports": {
+    "title": "PUERTOS",
+    "description": {
+      "part1": "Cubrimos todos los puertos argentinos, desde Corrientes en el Río Paraná hasta Ushuaia, la ciudad más austral del mundo. Contamos con gestiones operativas en Puerto de Uruguay y Zonas de Alije.",
+      "part2": "Contamos con personal propio en Buenos Aires y una red selecta, profesional y altamente capacitada de subagentes. Sumando tecnología de última generación en telecomunicaciones, demostramos día a día nuestra eficacia, con la eficiencia como horizonte en cada tarea que realizamos.",
+      "part3": "Brindamos un servicio personalizado a nuestros clientes, con los más altos estándares de calidad, basado en la confiabilidad y seguridad de nuestras comunicaciones, junto a un staff experimentado de profesionales."
+    }
+  },
+  "contact": {
+    "title": "CONTACTO",
+    "description": {
+      "part1": "Gracias al apoyo recibido de parte de clientes, nuestra firma se está posicionando entre aquellas más confiables y eficientes del mercado.",
+      "part2": "Por lo tanto, el compromiso asumido desde el inicio continúa vigente, ofreciendo día a día innovación y mejoras continuas en nuestro proceso, convencidos de que este es el mejor modo de responder a quienes confían en BLUE SHIPPING AGENTS"
+    },
+    "form": {
+      "title": "Envianos un mensaje",
+      "name": "Nombre",
+      "email": "Email",
+      "phone": "Teléfono",
+      "message": "Mensaje",
+      "send": "Enviar"
+    },
+    "address": "Olavarría 170 - C1162ABD - Ciudad Autónoma de Buenos Aires, Argentina."
+  }
+} 

@@ -2,7 +2,7 @@ import React from 'react';
 
 const WhatsAppButton = () => {
   // TODO: Replace this URL with your actual WhatsApp link
-  const whatsappUrl = "https://wa.me/YOUR_PHONE_NUMBER";
+  const whatsappUrl = "https://wa.me/+5491136879155";
 
   return (
     <a

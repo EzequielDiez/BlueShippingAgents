@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Layout from './Layout';
 
 const Inicio = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
+    const videoRef = useRef(null);
     const [showGradient, setShowGradient] = useState(() => {
         // Verificar si es la primera carga de la sesión
         return !sessionStorage.getItem('gradientShown');
     });
+    const [isMuted, setIsMuted] = useState(true);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -25,20 +29,47 @@ const Inicio = () => {
         }
     }, [showGradient]);
 
+    const toggleSound = () => {
+        if (videoRef.current) {
+            videoRef.current.muted = !videoRef.current.muted;
+            setIsMuted(!isMuted);
+        }
+    };
+
     return (
         <Layout>
             <div>
                 <div className="relative h-[calc(100vh-6rem)] sm:h-[calc(100vh-6rem)] md:h-[calc(100vh-6rem)] lg:h-[calc(100vh-6rem)] overflow-hidden">
                     <video
+                        ref={videoRef}
                         autoPlay
                         muted
                         loop
                         playsInline
-                        className="absolute top-0 left-0 w-full h-full object-cover transition-all duration-3500 ease-in-out opacity-100"
+                        onClick={toggleSound}
+                        className="absolute top-0 left-0 w-full h-full object-cover transition-all duration-3500 ease-in-out opacity-100 cursor-pointer"
                     >
-                        <source src="./videos/DJI_0184.webm" type="video/webm" />
+                        <source src="./videos/video-inicio-fps50.mp4" type="video/webm" />
                         Tu navegador no soporta el elemento de video.
                     </video>
+                    <button 
+                        onClick={toggleSound}
+                        className="absolute bottom-6 left-6 z-20 bg-[#1D4F87]/70 hover:bg-[#1D4F87]/90 rounded-full p-4 transition-all duration-300"
+                    >
+                        {isMuted ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                                <line x1="23" y1="9" x2="17" y2="15"/>
+                                <line x1="17" y1="9" x2="23" y2="15"/>
+                            </svg>
+                        ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                            </svg>
+                        )}
+                    </button>
                     {showGradient && (
                         <div className="absolute inset-0 bg-gradient-to-b from-white from-70% via-white/50 via-85% to-transparent opacity-90 animate-fadeOut"></div>
                     )}
@@ -48,14 +79,14 @@ const Inicio = () => {
                     <div className="bg-[#1D4F87]">
                         <div className="max-w-6xl mx-auto h-[160px] md:h-[200px] lg:h-[250px] flex items-end px-4 md:px-6 lg:px-8">
                             <h1 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sahar font-bold text-left mb-3">
-                                BIENVENIDOS A BLUE SHIPPING AGENTS
+                                {t('home.title')}
                             </h1>
                         </div>
                     </div>
                     <div className="bg-white">
                         <div className="max-w-6xl mx-auto h-[250px] md:h-[300px] lg:h-[350px] flex items-start px-4 md:px-6 lg:px-8">
                             <p className="text-[#1D4F87] text-md sm:text-lg md:text-xl lg:text-2xl font-sahar text-left mt-4">
-                                Somos un equipo de profesionales con más de 30 años de experiencia en el comercio internacional marítimo. Nuestro compromiso es ofrecer un servicio personalizado de excelencia, basado en la eficiencia, la honestidad y el trabajo arduo. Nos anticipamos a los desafíos del mercado para brindar soluciones efectivas y garantizar la tranquilidad de nuestros clientes.
+                                {t('home.description')}
                             </p>
                         </div>
                     </div>
@@ -67,10 +98,10 @@ const Inicio = () => {
                     <div className="w-1/2 bg-white flex flex-col justify-center items-center pl-4 sm:flex-row sm:h-1/2 md:flex-col md:h-full">
                         <div className="services-content px-4 sm:px-6 md:px-8">
                             <h2 className="text-[#1D4F87] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sahar font-bold mb-3 text-center">
-                                NUESTROS SERVICIOS
+                                {t('home.services.title')}
                             </h2>
                             <p className="text-[#1D4F87] text-md sm:text-lg md:text-xl lg:text-2xl font-sahar text-center">
-                                Proporcionamos servicios de agenciamiento marítimo y portuario, incluyendo cambio de tripulantes, gestión de repuestos y asistencia a tripulaciones y pasajeros. Además, optimizamos la logística combinando transporte terrestre y marítimo, garantizando calidad y eficiencia en cada operación.
+                                {t('home.services.description')}
                             </p>
                         </div>
                     </div>
@@ -110,15 +141,15 @@ const Inicio = () => {
                         </div>
                         {/* Texto a la derecha */}
                         <div className="w-1/2 flex flex-col items-end justify-center pr-16">
-                            <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sahar font-bold mb-4 text-right w-full">PRESENCIA EN PUERTOS</h2>
+                            <h2 className="text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sahar font-bold mb-4 text-right w-full">{t('home.ports.title')}</h2>
                             <p className="text-white text-md sm:text-lg md:text-xl lg:text-2xl font-sahar mb-4 max-w-[500px] text-right">
-                                Operamos en todos los puertos argentinos, desde Santa Fe hasta Ushuaia, con una red de subagentes altamente capacitados y el respaldo de tecnología avanzada. Ofrecemos un servicio confiable y seguro, adaptado a las necesidades de cada cliente.
+                                {t('home.ports.description')}
                             </p>
                             <button
                                 onClick={() => navigate('/puertos')}
                                 className="bg-[#F7CA0F] text-[#1D4F87] text-md sm:text-lg md:text-xl lg:text-2xl font-bold py-2 px-4 rounded-xl mt-2 hover:bg-yellow-400 hover:scale-105 transition-all duration-300 cursor-pointer"
                             >
-                                VER MÁS
+                                {t('home.ports.button')}
                             </button>
                         </div>
                     </div>
@@ -137,20 +168,20 @@ const Inicio = () => {
                         {/* Contenido izquierdo */}
                         <div className="relative z-10 flex flex-col justify-center md:w-7/12 lg:w-1/2 pl-6 contact-content">
                             <p className="text-white text-md sm:text-lg md:text-xl lg:text-2xl font-sahar mb-6">
-                                Estamos siempre disponibles para atender sus necesidades con innovación y mejora continua.
+                                {t('home.contact.description')}
                             </p>
                             <button
                                 onClick={() => navigate('/contacto')}
                                 className="flex items-center bg-[#F7CA0F] text-[#1D4F87] font-bold py-1 px-3 rounded-lg text-md sm:text-lg md:text-xl lg:text-2xl shadow hover:bg-yellow-400 hover:scale-105 transition-all duration-300 w-fit cursor-pointer"
                             >
                                 <img src="./images/icono-mail.svg" alt="Mail" className="w-7 h-7 mr-3" />
-                                <span className="flex items-center pt-1">CONTACTANOS</span>
+                                <span className="flex items-center pt-1">{t('home.contact.button')}</span>
                             </button>
                         </div>
                         {/* Imagen a la derecha */}
                         <div className="relative z-10 flex items-center justify-center contact-image">
                             <img
-                                src="./images/imagen-inicio-servicios.webp"
+                                src="./images/imagen-inicio-contacto.webp"
                                 alt="Equipo trabajando"
                                 className="object-cover w-full h-[150%] rounded-2xl translate-x-[12%] shadow-[0_0_30px_rgba(0,0,0,0.8)]"
                             />
