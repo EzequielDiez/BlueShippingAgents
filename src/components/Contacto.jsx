@@ -1,13 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Layout from './Layout';
 
 const Contacto = () => {
     const { t } = useTranslation();
+    const [formStatus, setFormStatus] = useState('');
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setFormStatus('sending');
+
+        const formData = new FormData(e.target);
+
+        try {
+            const response = await fetch('https://formspree.io/f/xldbwdnn', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                setFormStatus('success');
+                e.target.reset();
+            } else {
+                setFormStatus('error');
+            }
+        } catch (error) {
+            setFormStatus('error');
+        }
+    };
 
     return (
         <Layout isInitialAnimation={false}>
@@ -70,12 +97,20 @@ const Contacto = () => {
                     <div className="absolute inset-0 flex items-center justify-start contact-form-container">
                         <div className="bg-white shadow-[0_4px_20px_rgba(0,0,0,0.6)] rounded-2xl p-6 w-full max-w-md flex flex-col items-center ml-8 contact-form">
                             <h3 className="text-[#1D4F87] text-2xl font-bold mb-4 w-full text-left">{t('contact.form.title')}</h3>
-                            <form className="space-y-3 w-full">
-                                <input type="text" placeholder={t('contact.form.name')} className="w-full border border-[#1D4F87] rounded-full px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar text-lg placeholder-[#1D4F87]" />
-                                <input type="email" placeholder={t('contact.form.email')} className="w-full border border-[#1D4F87] rounded-full px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar text-lg placeholder-[#1D4F87]" />
-                                <input type="text" placeholder={t('contact.form.phone')} className="w-full border border-[#1D4F87] rounded-full px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar text-lg placeholder-[#1D4F87]" />
-                                <textarea placeholder={t('contact.form.message')} rows={3} className="w-full border border-[#1D4F87] rounded-2xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar resize-none text-lg placeholder-[#1D4F87]" />
-                                <button type="submit" className="w-full bg-[#1D4F87] text-white font-bold rounded-full py-2.5 text-lg transition hover:bg-[#17406c] cursor-pointer">{t('contact.form.send')}</button>
+                            <form onSubmit={handleSubmit} className="space-y-3 w-full">
+                                <input type="text" name="name" placeholder={t('contact.form.name')} required className="w-full border border-[#1D4F87] rounded-full px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar text-lg placeholder-[#1D4F87]" />
+                                <input type="email" name="email" placeholder={t('contact.form.email')} required className="w-full border border-[#1D4F87] rounded-full px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar text-lg placeholder-[#1D4F87]" />
+                                <input type="text" name="phone" placeholder={t('contact.form.phone')} required className="w-full border border-[#1D4F87] rounded-full px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar text-lg placeholder-[#1D4F87]" />
+                                <textarea name="message" placeholder={t('contact.form.message')} rows={3} required className="w-full border border-[#1D4F87] rounded-2xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-[#1D4F87] font-sahar resize-none text-lg placeholder-[#1D4F87]" />
+                                <button type="submit" disabled={formStatus === 'sending'} className="w-full bg-[#1D4F87] text-white font-bold rounded-full py-2.5 text-lg transition hover:bg-[#17406c] cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                                    {formStatus === 'sending' ? t('contact.form.sending') : t('contact.form.send')}
+                                </button>
+                                {formStatus === 'success' && (
+                                    <p className="text-green-600 text-center">{t('contact.form.success')}</p>
+                                )}
+                                {formStatus === 'error' && (
+                                    <p className="text-red-600 text-center">{t('contact.form.error')}</p>
+                                )}
                             </form>
                         </div>
                     </div>

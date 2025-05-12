@@ -20,7 +20,14 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
+    lng: 'es',
     fallbackLng: 'es',
+    detection: {
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
+      lookupLocalStorage: 'i18nextLng',
+      checkWhitelist: true
+    },
     interpolation: {
       escapeValue: false
     }

@@ -66,8 +66,11 @@
       "email": "Email",
       "phone": "Teléfono",
       "message": "Mensaje",
-      "send": "Enviar"
+      "send": "Enviar",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Hubo un error al enviar el mensaje. Por favor, intente nuevamente."
     },
     "address": "Olavarría 170 - C1162ABD - Ciudad Autónoma de Buenos Aires, Argentina."
   }
-} 
+}
