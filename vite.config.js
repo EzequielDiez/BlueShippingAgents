@@ -10,6 +10,9 @@ export default defineConfig({
     react()
   ],
   base: '/',
+  server: {
+    historyApiFallback: true,
+  },
   build: {
     outDir: 'docs',
     assetsDir: 'assets',
@@ -27,6 +30,7 @@ export default defineConfig({
         entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
+    copyPublicDir: true,
   },
   resolve: {
     alias: {

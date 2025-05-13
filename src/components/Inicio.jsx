@@ -49,24 +49,24 @@ const Inicio = () => {
                         onClick={toggleSound}
                         className="absolute top-0 left-0 w-full h-full object-cover transition-all duration-3500 ease-in-out opacity-100 cursor-pointer"
                     >
-                        <source src="./videos/video-inicio-fps50.mp4" type="video/webm" />
+                        <source src="./videos/video-optimizado.mp4" type="video/mp4" />
                         Tu navegador no soporta el elemento de video.
                     </video>
-                    <button 
+                    <button
                         onClick={toggleSound}
                         className="absolute bottom-6 left-6 z-20 bg-[#1D4F87]/70 hover:bg-[#1D4F87]/90 rounded-full p-4 transition-all duration-300"
                     >
                         {isMuted ? (
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-                                <line x1="23" y1="9" x2="17" y2="15"/>
-                                <line x1="17" y1="9" x2="23" y2="15"/>
+                                <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                                <line x1="23" y1="9" x2="17" y2="15" />
+                                <line x1="17" y1="9" x2="23" y2="15" />
                             </svg>
                         ) : (
                             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <path d="M11 5L6 9H2v6h4l5 4V5z"/>
-                                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                                <path d="M11 5L6 9H2v6h4l5 4V5z" />
+                                <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
                             </svg>
                         )}
                     </button>
