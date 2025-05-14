@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
                 setShowAnimation(false);
                 // Guardar en sessionStorage que ya se ha animado
                 sessionStorage.setItem('hasAnimated', 'true');
-            }, 500);
+            }, 1500);
 
             return () => clearTimeout(timer);
         } else {

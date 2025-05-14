@@ -26,7 +26,7 @@ const Navbar = ({ isInitialAnimation }) => {
             const timer = setTimeout(() => {
                 setShowLinks(true);
                 sessionStorage.setItem('hasLoaded', 'true');
-            }, 2500);
+            }, 3500);
             return () => clearTimeout(timer);
         } else {
             // En cargas posteriores, mostrar los links inmediatamente
