@@ -12,6 +12,7 @@ const Inicio = () => {
         return !sessionStorage.getItem('gradientShown');
     });
     const [isMuted, setIsMuted] = useState(true);
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -29,11 +30,23 @@ const Inicio = () => {
         }
     }, [showGradient]);
 
+    // Precargar el video
+    useEffect(() => {
+        const video = new Video();
+        video.src = './videos/video-optimizado.mp4';
+        video.preload = 'auto';
+        video.load();
+    }, []);
+
     const toggleSound = () => {
         if (videoRef.current) {
             videoRef.current.muted = !videoRef.current.muted;
             setIsMuted(!isMuted);
         }
+    };
+
+    const handleVideoLoaded = () => {
+        setIsVideoLoaded(true);
     };
 
     return (
@@ -46,8 +59,11 @@ const Inicio = () => {
                         muted
                         loop
                         playsInline
+                        preload="auto"
                         onClick={toggleSound}
-                        className="absolute top-0 left-0 w-full h-full object-cover transition-all duration-3500 ease-in-out opacity-100 cursor-pointer"
+                        onLoadedData={handleVideoLoaded}
+                        className={`absolute top-0 left-0 w-full h-full object-cover transition-all duration-3500 ease-in-out ${isVideoLoaded ? 'opacity-100' : 'opacity-0'} cursor-pointer`}
+                        poster="./images/video-poster.webp"
                     >
                         <source src="./videos/video-optimizado.mp4" type="video/mp4" />
                         Tu navegador no soporta el elemento de video.

@@ -38,12 +38,12 @@ const Contacto = () => {
 
     return (
         <Layout isInitialAnimation={false}>
-            <div className="w-full font-sahar h-[75vh] grid grid-cols-2 contact-container">
+            <div className="w-full font-sahar min-h-[75vh] grid grid-cols-2 contact-container">
                 {/* Columna Izquierda */}
                 <div className="flex flex-col h-full contact-left">
                     {/* Arriba: Título y texto */}
                     <div className="bg-[#1D4F87] text-white flex items-end justify-end h-[55%] contact-top">
-                        <div className="flex flex-col items-start max-w-2xl w-full px-16 pb-8 text-left">
+                        <div className="flex flex-col items-start max-w-2xl w-full px-16 pb-8 text-left pt-24">
                             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3">{t('contact.title')}</h2>
                             <p className="mb-3 text-md sm:text-lg md:text-xl">
                                 {t('contact.description.part1')}
@@ -135,7 +135,7 @@ const Contacto = () => {
 
                     .contact-top {
                         height: auto !important;
-                        padding: 4rem 1rem 2rem 1rem !important;
+                        padding: 6rem 1rem 2rem 1rem !important;
                         width: 100vw !important;
                         margin-left: calc(-50vw + 50%) !important;
                         margin-right: calc(-50vw + 50%) !important;
@@ -147,6 +147,7 @@ const Contacto = () => {
                         padding: 0 !important;
                         margin: 0 auto !important;
                         max-width: 600px !important;
+                        padding-top: 0 !important;
                     }
 
                     .contact-bottom {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import ImagePreloader from './ImagePreloader';
 
 const Layout = ({ children }) => {
     const location = useLocation();
@@ -37,6 +38,7 @@ const Layout = ({ children }) => {
 
     return (
         <div>
+            <ImagePreloader />
             <header>
                 <Navbar isInitialAnimation={showAnimation} />
             </header>
