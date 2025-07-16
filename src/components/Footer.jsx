@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
     const { t } = useTranslation();
-    
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -66,16 +66,28 @@ const Footer = () => {
             </nav>
             <div className="w-full max-w-2xl px-4 border-t border-[#1D4F87] my-4" />
             <div className="flex flex-row gap-6 mb-6 md:mb-10 select-none">
-                <img
-                    src="./images/icono-facebook.svg"
-                    alt="Facebook"
-                    className="w-7 h-7 md:w-9 md:h-9 cursor-pointer hover:opacity-80 transition-all duration-300 hover:scale-110"
-                />
-                <img
-                    src="./images/icono-instagram.svg"
-                    alt="Instagram"
-                    className="w-7 h-7 md:w-9 md:h-9 cursor-pointer hover:opacity-80 transition-all duration-300 hover:scale-110"
-                />
+                <a
+                    href="https://www.facebook.com/BsaAgents"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="./images/icono-facebook.svg"
+                        alt="Facebook"
+                        className="w-7 h-7 md:w-9 md:h-9 cursor-pointer hover:opacity-80 transition-all duration-300 hover:scale-110"
+                    />
+                </a>
+                <a
+                    href="https://www.instagram.com/bsa.agents/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="./images/icono-instagram.svg"
+                        alt="Instagram"
+                        className="w-7 h-7 md:w-9 md:h-9 cursor-pointer hover:opacity-80 transition-all duration-300 hover:scale-110"
+                    />
+                </a>
             </div>
             <div className="text-[#1D4F87] text-center text-sm md:text-base font-['Sahar'] mb-6 md:mb-10">
                 <div>© Blue Shipping Agents 2025, All rights reserved.</div>
